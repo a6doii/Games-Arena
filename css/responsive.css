@@ -1,0 +1,219 @@
+/* =========================================================
+   GameArena – responsive overrides
+   Breakpoints match the original: sm 640px, md 768px, lg 1024px.
+   Root font size steps down on small screens (all spacing is rem).
+   ========================================================= */
+
+/* ---------- Root font size ---------- */
+@media (max-width: 640px) {
+  html { font-size: 14px; }
+
+  /* touch targets, as on the original */
+  button,
+  a,
+  .arrow-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+@media (min-width: 641px) and (max-width: 768px) {
+  html { font-size: 15px; }
+}
+@media (max-width: 768px) {
+  html { scroll-padding-top: 140px; }
+}
+
+.menu-toggle {
+  align-items: center;
+  justify-content: center;
+}
+.menu-open { display: flex; }
+.site-header:has(#mobile-menu:target) .menu-close { display: flex; }
+
+/* =========================================================
+   sm ≥ 640px
+   ========================================================= */
+@media (min-width: 640px) {
+  .wrap { padding-inline: 1.5rem; }
+
+  /* hero */
+  .hero-inner { padding-inline: 1.5rem; }
+  .hero-title { font-size: 3rem; }
+  .hero-text {
+    font-size: 1rem;
+  }
+  .hero-actions { flex-direction: row; }
+  .btn-hero {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .hero-img { height: 20rem; }
+  .hero-badge {
+    bottom: -1.5rem;
+    left: -1.5rem;
+    padding: 1.5rem;
+  }
+  .hero-badge-icon {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-right: 1rem;
+  }
+  .hero-badge-value {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  /* eyebrow lines */
+  .eyebrow::before,
+  .eyebrow::after { width: 4rem; }
+  .eyebrow::before { left: -80px; }
+  .eyebrow::after { right: -80px; }
+
+  /* games */
+  .games-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .games-controls {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .arrow-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .btn-view-all {
+    width: auto;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  /* what we do */
+  .what-title {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  /* footer */
+  .site-footer .wrap { padding-inline: 1.5rem; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* =========================================================
+   md ≥ 768px
+   ========================================================= */
+@media (min-width: 768px) {
+  .section-pad { padding-block: 6rem; }
+  .section-head { margin-bottom: 4rem; }
+
+  /* hero */
+  .hero-inner { padding-block: 0; }
+  .hero-grid { gap: 3rem; }
+  .hero-title { margin-bottom: 1.5rem; }
+  .hero-text { margin-bottom: 2rem; }
+  .hero-actions { gap: 1rem; }
+  .hero-img { height: 24rem; }
+
+  .eyebrow {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  /* games */
+  .games-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .carousel-track { --cols: 2; }
+  .carousel-item-c { width: 50%; }
+  .games-controls { margin-top: 3rem; }
+  .btn-view-all {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  /* what we do */
+  .what-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .what-grid { gap: 1.5rem; }
+  .service-card--compact { padding: 1.5rem; }
+  .service-card--compact .service-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+  .service-card--compact .service-icon i {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .service-card h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .service-card--compact h3 { line-height: 1.25; }
+
+  /* team */
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* contact */
+  .form-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* footer */
+  .site-footer { padding-block: 4rem; }
+  .footer-grid { margin-bottom: 3rem; }
+  .footer-bottom-row { flex-direction: row; }
+  .footer-copy { margin-bottom: 0; }
+}
+
+/* fixed (parallax) hero background only above 768px, like the original */
+@media (min-width: 769px) {
+  .hero { background-attachment: fixed; }
+}
+
+/* =========================================================
+   lg ≥ 1024px
+   ========================================================= */
+@media (min-width: 1024px) {
+  /* header */
+  .main-nav { display: flex; }
+  .desktop-only { display: block; }
+  .menu-open,
+  .menu-close,
+  .site-header:has(#mobile-menu:target) .menu-close { display: none; }
+  .mobile-menu,
+  .mobile-menu:target { display: none; }
+
+  /* hero */
+  .hero-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-copy { text-align: left; }
+  .hero-title { font-size: 3.75rem; }
+  .hero-text { margin-inline: 0; }
+  .hero-actions { justify-content: flex-start; }
+  .hero-media { margin-top: 0; }
+
+  /* games */
+  .carousel-track { --cols: 3; }
+  .carousel-item-c { width: 33.333333%; }
+
+  /* what we do */
+  .what-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .what-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  /* team */
+  .team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  /* contact */
+  .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* footer */
+  .footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
